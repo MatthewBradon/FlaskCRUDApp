@@ -8,9 +8,7 @@
 <body>
   <div>
 
-    <div>
-      <h1>Student Management</h1>
-    
+    <div>    
       <h3>Add Student</h3>
       <form id="addStudentForm">
         <label for="addName">Name:</label>
@@ -95,7 +93,9 @@
             var id = $('#id').val();
             var name = $('#updateName').val();
             var email = $('#updateEmail').val();
-
+            console.log(id);
+            console.log(name);
+            console.log(email);
             $.ajax({
               url: '/update',
               method: 'PUT',
@@ -115,7 +115,7 @@
           // Delete student
           $('#deleteStudentButton').on('click', function() {
             var name = $('#deleteName').val();
-    
+            console.log(name);
             $.ajax({
               url: '/delete',
               method: 'DELETE',
