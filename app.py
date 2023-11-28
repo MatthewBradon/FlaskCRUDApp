@@ -44,7 +44,7 @@ def add():
 @app.route("/update", methods=['PUT'])  # Update Student
 def update():
     try:
-        id = int(request.form.get('id'))
+        id = int(request.json.get('id'))
         name = request.json.get('name')
         email = request.json.get('email')
 
@@ -59,7 +59,7 @@ def update():
 @app.route("/delete", methods=['DELETE'])  # Delete Student
 def delete():
     try:
-        name = request.args.get('deleteName')
+        name = request.args.get('name')
 
         query = '''DELETE FROM students WHERE studentName='{}';'''.format(name)
         success = execute_query(query)
